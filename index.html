@@ -5,32 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to My Website</h1>
-    <img src="image.jpg" alt="Sample Image">
-    <button onclick="myFunction()">Dropdown</button>
-    <div id="myDropdown" class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+    <div class="dropdown">
+        <button>Dropdown 1</button>
+        <div class="dropdown-content">
+            <a href="#">Option 1</a>
+            <a href="#">Option 2</a>
+            <a href="#">Option 3</a>
+        </div>
     </div>
-    <script>
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+    <div class="dropdown">
+        <button>Dropdown 2</button>
+        <div class="dropdown-content">
+            <a href="#">Option A</a>
+            <a href="#">Option B</a>
+            <a href="#">Option C</a>
+        </div>
+    </div>
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <div class="dropdown">
+        <button>Dropdown 3</button>
+        <div class="dropdown-content">
+            <a href="#">Option X</a>
+            <a href="#">Option Y</a>
+            <a href="#">Option Z</a>
+        </div>
+    </div>
+    <img src="image3.jpg" alt="Image 3">
 </body>
 </html>
